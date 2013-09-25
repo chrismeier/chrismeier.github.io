@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://chrismeier.github.io/sitemap.xml 
+Sitemap: http://ChrisMeier.github.io/sitemap.xml 
