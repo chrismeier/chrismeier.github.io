@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose/</loc>
+        <lastmod>2013-09-25T09:21:53-07:00</lastmod>
+    </url>
+    <url>
         <loc>http://ChrisMeier.github.io/blog/archives/</loc>
-        <lastmod>2013-09-25T00:47:37-07:00</lastmod>
+        <lastmod>2013-09-25T09:21:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://ChrisMeier.github.io/</loc>
-        <lastmod>2013-09-25T00:47:37-07:00</lastmod>
+        <lastmod>2013-09-25T09:21:53-07:00</lastmod>
     </url>
     <url>
         <loc>http://ChrisMeier.github.io/robots.txt</loc>
