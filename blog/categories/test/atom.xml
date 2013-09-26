@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Test | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-09-25T18:18:31-07:00</updated>
+  <updated>2013-09-26T12:00:04-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -23,17 +23,32 @@
 <!--more-->
 
 
-<p>Bold:
-I heard it was best to inflate oneself visually when in the presence of a bear so as to deter an attack</p>
+<p>Bold:<br>
+<B>I heard it was best to inflate oneself visually when in the presence of a bear so as to deter an attack</B></p>
 
-<p>Italicize:
-I seem to be falling to the side. (Thought Bubble: Was the leaning tower of pisa built in a time that appreciated italics?)</p>
+<p>Italicize:<br>
+<I>I seem to be falling to the side. (Thought Bubble: Was the leaning tower of pisa built in a time that appreciated italics?)</I></p>
 
-<p>Underline:
-DO YOU SEE ME? I have been.. oh wait, where did it go <em>snaps fingers</em> Ah, this is much better (hopefully</p>
+<p>Underline:<br>
+<U>DO YOU SEE ME?</U> I have been.. oh wait, where did it go <em>snaps fingers</em> <U>Ah, this is much better (hopefully</U></p>
 
-<p>Code:
-ALT + F4 wins you $30,000 &hellip; suckers&hellip;.</p>
+<p>Code:<br></p>
+
+<pre> ALT + F4 wins you $30,000 ... suckers.... </pre>
+
+
+<p>Alternate Code:</p>
+
+<p>``` ruby Alternate Code Test <a href="http://chrisonrails.com">http://chrisonrails.com</a> Chris On Rails
+class Fixnum
+  def prime?</p>
+
+<pre><code>('1' * self) !~ /^1?$|^(11+?)\1+$/
+</code></pre>
+
+<p>  end
+end
+```</p>
 ]]></content>
   </entry>
   

@@ -11,7 +11,7 @@
     <title>HTML Element Test - Chris Meier's Blog</title>
     <meta name="author" content="Chris Meier">
     
-    <meta name="description" content="HTML Element Test Jun 12th, 2013 Test HTML Well I happen to not be that well versed in how to prevent XSS and escaping characters so it was a &hellip;">
+    <meta name="description" content="HTML Element Test Jun 12th, 2013 Test HTML Comments Well I happen to not be that well versed in how to prevent XSS and escaping characters so it was &hellip;">
     
     <meta name="viewport" content="width=device-width">
     
@@ -40,6 +40,7 @@
   <li><a href="/">Home</a></li>
   <li><a href="/blog/">Blog</a></li>
   <li><a href="/about.html">About</a></li>
+  <li><a href="/resources.html">Resources</a></li>
 </ul>
   </nav>
 </div>
@@ -95,6 +96,10 @@
   
 
     
+      <a class="pull-right" href="#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
   </div>
   
 </header>
@@ -107,21 +112,44 @@
 <!--more-->
 
 
-<p>Bold:
-I heard it was best to inflate oneself visually when in the presence of a bear so as to deter an attack</p>
+<p>Bold:<br>
+<B>I heard it was best to inflate oneself visually when in the presence of a bear so as to deter an attack</B></p>
 
-<p>Italicize:
-I seem to be falling to the side. (Thought Bubble: Was the leaning tower of pisa built in a time that appreciated italics?)</p>
+<p>Italicize:<br>
+<I>I seem to be falling to the side. (Thought Bubble: Was the leaning tower of pisa built in a time that appreciated italics?)</I></p>
 
-<p>Underline:
-DO YOU SEE ME? I have been.. oh wait, where did it go <em>snaps fingers</em> Ah, this is much better (hopefully</p>
+<p>Underline:<br>
+<U>DO YOU SEE ME?</U> I have been.. oh wait, where did it go <em>snaps fingers</em> <U>Ah, this is much better (hopefully</U></p>
 
-<p>Code:
-ALT + F4 wins you $30,000 &hellip; suckers&hellip;.</p>
+<p>Code:<br></p>
+
+<pre> ALT + F4 wins you $30,000 ... suckers.... </pre>
+
+
+<p>Alternate Code:</p>
+
+<figure class='code'><figcaption><span>Alternate Code Test</span><a href='http://chrisonrails.com'>Chris On Rails</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">prime?</span>
+</span><span class='line'>    <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 
 </article>
 
+ 
+<section id="disqus">
+  <h1 class="indent title">Comments</h1>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 
         
         </div>
@@ -236,6 +264,22 @@ ALT + F4 wins you $30,000 &hellip; suckers&hellip;.</p>
 </script>
 
 
+
+<script>
+  var disqus_shortname = 'chris-on-rails';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://ChrisMeier.github.io/blog/2013/06/12/html-element-test/';
+    var disqus_url = 'http://ChrisMeier.github.io/blog/2013/06/12/html-element-test/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
 
 
 

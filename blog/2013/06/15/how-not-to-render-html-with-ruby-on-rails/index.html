@@ -11,7 +11,7 @@
     <title>How [Not] to Render HTML With Ruby on Rails - Chris Meier's Blog</title>
     <meta name="author" content="Chris Meier">
     
-    <meta name="description" content="How [Not] to Render HTML With Ruby on Rails Jun 15th, 2013 HTML Rails So after putting up my second post I realized that rails had escaped all of my &hellip;">
+    <meta name="description" content="How [Not] to Render HTML With Ruby on Rails Jun 15th, 2013 HTML Rails Comments So after putting up my second post I realized that rails had escaped &hellip;">
     
     <meta name="viewport" content="width=device-width">
     
@@ -40,6 +40,7 @@
   <li><a href="/">Home</a></li>
   <li><a href="/blog/">Blog</a></li>
   <li><a href="/about.html">About</a></li>
+  <li><a href="/resources.html">Resources</a></li>
 </ul>
   </nav>
 </div>
@@ -95,6 +96,10 @@
   
 
     
+      <a class="pull-right" href="#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
   </div>
   
 </header>
@@ -102,25 +107,31 @@
 
 
 
-  <p>So after putting up my second post I realized that rails had escaped all of my line breaks and when it came time to show the post it wasn&rsquo;t rendering them. I jumped on google and looked for an answer and the result was a solution on Stack Overflow and an understanding of why it had done that.</p>
+  <p>So after putting up my second post I realized that rails had escaped all of my line breaks and when it came time to show the post it wasn&rsquo;t rendering them. I jumped on google and looked for an answer and the result was a <a href="http://stackoverflow.com/questions/3137393/rails-add-a-line-break-into-a-text-area"\>solution on Stack Overflow</a> and an understanding of why it had done that.<br>
+So what was the solution?  <!-- more -->Well it turns out you just need to tell Rails to substitute the the escaped characters with html line breaks:</p>
 
-<!--more-->
+<pre> <%= @post.body.gsub(/\n/,'&lt;br/&gt;') %> </pre>
 
 
-<p>So what was the solution? Well it turns out you just need to tell Rails to substitute the the escaped characters with html line breaks:</p>
-
-<p>&lt;%= @post.body.gsub(/\n/,&lsquo;<br/>&rsquo;) %></p>
-
-<p>Easy enough right? Well that now allows for link breaks to occur which is great, but when I viewed my posts now, all I was seeing was my text split up by a bunch of <br/>
-tags.</p>
+<p>Easy enough right? Well that now allows for link breaks to occur which is great, but when I viewed my posts now, all I was seeing was my text split up by a bunch of <pre>&lt;br/&gt;
+</pre>tags.</p>
 
 <p>The next step was to tell rails, &ldquo;Hey it&rsquo;s okay to render the HTML tags in here&rdquo;. To accomplish this we simply add the .html_safe method to the end of the existing render command.</p>
 
-<p>&lt;%= @post.body.gsub(/\n/,&lsquo;<br/>&rsquo;).html_safe %></p>
+<pre> <%= @post.body.gsub(/\n/,'&lt;br/&gt;').html_safe %> </pre>
 
-<p>So all is great right? No. Allowing HTML to be rendered can pose some security risks or allow for stupid errors if you mess something up like I did below:</p>
 
-<p>In forgetting to close a link tag I ended up messing up my HTML and the result was submitting a new post every time I hit save. So imagine if your users had this power? Or if they wanted to perform some malicious attack such as XSS? That doesn&rsquo;t bode so well for you so allowing user submitted text to be rendered is not the best idea.</p>
+<p>So all is great right? No. Allowing HTML to be rendered can pose some security risks or allow for stupid errors if you mess something up like I did below:<br>
+<img class="left" src="/images/BlogImages/multiplePostsError.png" title="image" alt="images"></p>
+
+<br>In forgetting to close a link tag I ended up messing up my HTML and the result was submitting a new post every time I hit save. So imagine if your users had this power? Or if they wanted to perform some malicious attack such as XSS? That doesn&#8217;t bode so well for you so allowing user submitted text to be rendered is not the best idea.
+
+
+<br/>
+
+
+<br>
+
 
 <p>I&rsquo;m sure someone else has a better solution but for the time being my choice is to understand that I have a security risk in my ability to post so as long as I properly close tags and keep the ability to post to myself I should be good to go.</p>
 
@@ -129,6 +140,12 @@ tags.</p>
 
 </article>
 
+ 
+<section id="disqus">
+  <h1 class="indent title">Comments</h1>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 
         
         </div>
@@ -243,6 +260,22 @@ tags.</p>
 </script>
 
 
+
+<script>
+  var disqus_shortname = 'chris-on-rails';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://ChrisMeier.github.io/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails/';
+    var disqus_url = 'http://ChrisMeier.github.io/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
 
 
 

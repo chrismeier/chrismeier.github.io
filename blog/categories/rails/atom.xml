@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-09-25T18:18:31-07:00</updated>
+  <updated>2013-09-26T12:00:04-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -20,20 +20,22 @@
     <id>http://ChrisMeier.github.io/blog/2013/07/30/static-pages-with-rails</id>
     <content type="html"><![CDATA[<p>Recently I wanted to put together and &ldquo;About Me&rdquo; and a &ldquo;Resources&rdquo; page but I didn&rsquo;t know how do this within rails.</p>
 
-<!--more-->
+<!-- more -->
 
 
 <p>Turns out it was pretty simple but I should acknowledge that my solution isn&rsquo;t the only option and if you site is mostly static I&rsquo;ve read that Jekyll might be a good option.</p>
 
 <p>To create static pages I first made a controller for those pages:</p>
 
-<p>rails g controller pages</p>
+<pre>rails g controller pages</pre>
 
-<p>From there I went to the newly created &ldquo;pages&rdquo; folder within my views. I added a new file: about.html.erb and put the static HTML that I wanted to serve up in here.</p>
+
+<p>From there I went to the newly created &ldquo;pages&rdquo; folder within my views. I added a new file: <i>about.html.erb</i> and put the static HTML that I wanted to serve up in here.</p>
 
 <p>The final touch was adding routes so I could link to the files. Within my routes.rb I added:</p>
 
-<p>get &lsquo;/about&rsquo; => &lsquo;pages#about&rsquo;</p>
+<pre>get '/about' => 'pages#about'</pre>
+
 
 <p>And boom, just like that I am able to link to these files in my header and easily serve up HTML pages without having to get extra gems or get to crazy with things.</p>
 ]]></content>
@@ -44,25 +46,31 @@
     <link href="http://ChrisMeier.github.io/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails/"/>
     <updated>2013-06-15T01:37:02-07:00</updated>
     <id>http://ChrisMeier.github.io/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails</id>
-    <content type="html"><![CDATA[<p>So after putting up my second post I realized that rails had escaped all of my line breaks and when it came time to show the post it wasn&rsquo;t rendering them. I jumped on google and looked for an answer and the result was a solution on Stack Overflow and an understanding of why it had done that.</p>
+    <content type="html"><![CDATA[<p>So after putting up my second post I realized that rails had escaped all of my line breaks and when it came time to show the post it wasn&rsquo;t rendering them. I jumped on google and looked for an answer and the result was a <a href="http://stackoverflow.com/questions/3137393/rails-add-a-line-break-into-a-text-area"\>solution on Stack Overflow</a> and an understanding of why it had done that.<br>
+So what was the solution?  <!-- more -->Well it turns out you just need to tell Rails to substitute the the escaped characters with html line breaks:</p>
 
-<!--more-->
+<pre> <%= @post.body.gsub(/\n/,'&lt;br/&gt;') %> </pre>
 
 
-<p>So what was the solution? Well it turns out you just need to tell Rails to substitute the the escaped characters with html line breaks:</p>
-
-<p>&lt;%= @post.body.gsub(/\n/,&lsquo;<br/>&rsquo;) %></p>
-
-<p>Easy enough right? Well that now allows for link breaks to occur which is great, but when I viewed my posts now, all I was seeing was my text split up by a bunch of <br/>
-tags.</p>
+<p>Easy enough right? Well that now allows for link breaks to occur which is great, but when I viewed my posts now, all I was seeing was my text split up by a bunch of <pre>&lt;br/&gt;
+</pre>tags.</p>
 
 <p>The next step was to tell rails, &ldquo;Hey it&rsquo;s okay to render the HTML tags in here&rdquo;. To accomplish this we simply add the .html_safe method to the end of the existing render command.</p>
 
-<p>&lt;%= @post.body.gsub(/\n/,&lsquo;<br/>&rsquo;).html_safe %></p>
+<pre> <%= @post.body.gsub(/\n/,'&lt;br/&gt;').html_safe %> </pre>
 
-<p>So all is great right? No. Allowing HTML to be rendered can pose some security risks or allow for stupid errors if you mess something up like I did below:</p>
 
-<p>In forgetting to close a link tag I ended up messing up my HTML and the result was submitting a new post every time I hit save. So imagine if your users had this power? Or if they wanted to perform some malicious attack such as XSS? That doesn&rsquo;t bode so well for you so allowing user submitted text to be rendered is not the best idea.</p>
+<p>So all is great right? No. Allowing HTML to be rendered can pose some security risks or allow for stupid errors if you mess something up like I did below:<br>
+<img class="left" src="/images/BlogImages/multiplePostsError.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></p>
+
+<br>In forgetting to close a link tag I ended up messing up my HTML and the result was submitting a new post every time I hit save. So imagine if your users had this power? Or if they wanted to perform some malicious attack such as XSS? That doesn't bode so well for you so allowing user submitted text to be rendered is not the best idea.
+
+
+<br/>
+
+
+<br>
+
 
 <p>I&rsquo;m sure someone else has a better solution but for the time being my choice is to understand that I have a security risk in my ability to post so as long as I properly close tags and keep the ability to post to myself I should be good to go.</p>
 
@@ -97,7 +105,7 @@ tags.</p>
     <link href="http://ChrisMeier.github.io/blog/2013/06/12/problem-can-can-not-working-in-production/"/>
     <updated>2013-06-12T09:08:18-07:00</updated>
     <id>http://ChrisMeier.github.io/blog/2013/06/12/problem-can-can-not-working-in-production</id>
-    <content type="html"><![CDATA[<p>So I&rsquo;ve been a huge fan and consumer of Ryan Bates RailsCasts. I find them very helpful with understanding the process of building a rails app from scratch or adding on features. My biggest issue is finding a place to start when coding. I&rsquo;m presented with my existing code and I just don&rsquo;t know how to take that first step in building out my ideas. I&rsquo;m getting better at it but a lot of credit is due to the RailsCasts and helping me understand the thought process one goes through when writing code.</p>
+    <content type="html"><![CDATA[<p>So I&rsquo;ve been a huge fan and consumer of Ryan Bates <a href="http://railscasts.com">RailsCasts</a>.  I find them very helpful with understanding the process of building a rails app from scratch or adding on features. My biggest issue is finding a place to start when coding. I&rsquo;m presented with my existing code and I just don&rsquo;t know how to take that first step in building out my ideas. I&rsquo;m getting better at it but a lot of credit is due to the RailsCasts and helping me understand the thought process one goes through when writing code.</p>
 
 <!--more-->
 
@@ -106,12 +114,19 @@ tags.</p>
 
 <p>My first check was to make sure that my User record had the proper boolean in my production environment.</p>
 
-<p>RAILS_ENV=production rails console
-irb> User.all</p>
+<pre>RAILS_ENV=production rails console</pre>
+
+
+<br>
+
+
+<pre>irb> User.all</pre>
+
 
 <p>At this point I realized that my User record in the production database did not have the boolean turned on. Should be a simple fix, just grab the id (## used in its place below) of my user that I wanted the turn on the roles for.</p>
 
-<p>irb> User.find(##).update_attribute(:attribute_name, &lsquo;True&rsquo;)</p>
+<pre>irb> User.find(##).update_attribute(:attribute_name, 'True')</pre>
+
 
 <p>&mdash;&mdash;Woops&mdash;&mdash;</p>
 

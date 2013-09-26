@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Static Pages | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/static-pages/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-09-25T18:18:31-07:00</updated>
+  <updated>2013-09-26T12:00:04-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -20,20 +20,22 @@
     <id>http://ChrisMeier.github.io/blog/2013/07/30/static-pages-with-rails</id>
     <content type="html"><![CDATA[<p>Recently I wanted to put together and &ldquo;About Me&rdquo; and a &ldquo;Resources&rdquo; page but I didn&rsquo;t know how do this within rails.</p>
 
-<!--more-->
+<!-- more -->
 
 
 <p>Turns out it was pretty simple but I should acknowledge that my solution isn&rsquo;t the only option and if you site is mostly static I&rsquo;ve read that Jekyll might be a good option.</p>
 
 <p>To create static pages I first made a controller for those pages:</p>
 
-<p>rails g controller pages</p>
+<pre>rails g controller pages</pre>
 
-<p>From there I went to the newly created &ldquo;pages&rdquo; folder within my views. I added a new file: about.html.erb and put the static HTML that I wanted to serve up in here.</p>
+
+<p>From there I went to the newly created &ldquo;pages&rdquo; folder within my views. I added a new file: <i>about.html.erb</i> and put the static HTML that I wanted to serve up in here.</p>
 
 <p>The final touch was adding routes so I could link to the files. Within my routes.rb I added:</p>
 
-<p>get &lsquo;/about&rsquo; => &lsquo;pages#about&rsquo;</p>
+<pre>get '/about' => 'pages#about'</pre>
+
 
 <p>And boom, just like that I am able to link to these files in my header and easily serve up HTML pages without having to get extra gems or get to crazy with things.</p>
 ]]></content>
