@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CanCan | Chris Meier's Blog]]></title>
+  <link href="http://ChrisMeier.github.io/blog/categories/cancan/atom.xml" rel="self"/>
+  <link href="http://ChrisMeier.github.io/"/>
+  <updated>2013-09-25T18:02:58-07:00</updated>
+  <id>http://ChrisMeier.github.io/</id>
+  <author>
+    <name><![CDATA[Chris Meier]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Problem: Can Can (not) working in production]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/problem-can-can-not-working-in-production/"/>
+    <updated>2013-06-12T09:08:18-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/problem-can-can-not-working-in-production</id>
+    <content type="html"><![CDATA[<p>So I&rsquo;ve been a huge fan and consumer of Ryan Bates RailsCasts. I find them very helpful with understanding the process of building a rails app from scratch or adding on features. My biggest issue is finding a place to start when coding. I&rsquo;m presented with my existing code and I just don&rsquo;t know how to take that first step in building out my ideas. I&rsquo;m getting better at it but a lot of credit is due to the RailsCasts and helping me understand the thought process one goes through when writing code.</p>
+
+<!--more-->
+
+
+<p>My current dilemma is that I am unable to run the gem CanCan in my production environment. It works fine in development and I able to :manage without issue. When I switch it over to production it seems that the roles never trigger. I am using a boolean in the User model to allow myself to define whether or not I should have permissions.</p>
+
+<p>My first check was to make sure that my User record had the proper boolean in my production environment.</p>
+
+<p>RAILS_ENV=production rails console
+irb> User.all</p>
+
+<p>At this point I realized that my User record in the production database did not have the boolean turned on. Should be a simple fix, just grab the id (## used in its place below) of my user that I wanted the turn on the roles for.</p>
+
+<p>irb> User.find(##).update_attribute(:attribute_name, &lsquo;True&rsquo;)</p>
+
+<p>&mdash;&mdash;Woops&mdash;&mdash;</p>
+
+<p>Well initially I wanted to write this post as a way of sharing my problem and later making a post on how I fixed it. In going through code snippets to make sure I had the right syntax I found that the boolean that I had at one point set to true (or so I believed) in fact was false. So, after going through the above Can Can is now working in my production environment. In fact, it was always working, I was just being ignorant about the possibility of having made a mistake. Lesson learned.</p>
+]]></content>
+  </entry>
+  
+</feed>

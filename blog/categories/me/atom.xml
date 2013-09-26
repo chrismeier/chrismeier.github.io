@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: me | Chris Meier's Blog]]></title>
+  <title><![CDATA[Category: Me | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/me/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-09-25T11:13:34-07:00</updated>
+  <updated>2013-09-25T18:02:58-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -14,10 +14,32 @@
 
   
   <entry>
+    <title type="html"><![CDATA[How I Ended Up Here]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/how-i-ended-up-here/"/>
+    <updated>2013-06-12T20:41:02-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/how-i-ended-up-here</id>
+    <content type="html"><![CDATA[<p>So I thought my experience with coding would be a good topic to review to provide a clearer explanation of the path I am on. Coding has always ben something that has interested me, but I have always found an excuse not to pursue it more aggressively. When I was in 7th and 8th grade I took a computer class where we went over HTML and played around with various elements and ran them off our local computer. Well I wanted more of it so after a while I worked on my own site at home and eventually hosted it on Geocities. It was a crap site with the usual tiled image background, links to sites I liked and maybe a review or two of movies that I had just seen. I would say that this experience is what really convinced me that I could construct some sort of code in a meaningful way.</p>
+
+<!--more-->
+
+
+<p>Fast forward 5 years and I am in college taking Management Information System &mdash; MIS (my option) courses and am getting a better understanding of the structure of applications, networking and the functions of a server. My second year I took a SQL course and entered it excited to learn another language and the structure of databases was always something that interested me. I finished the course top in the class, with an fantastic understanding of the RDB&rsquo;s and SQL, and was offered a position as a TA which I&rsquo;ve now held for 4 semesters.</p>
+
+<p>Knowing SQL was empowering but it became clear it was not a language that I could make something cool with. I had ideas for iOS apps and tried looking into Objective-C but was quickly discouraged by the recommendations that I should know other languages first. My momentum took a hit which was compounded by taking a course on PHP and MySQL which was ultimately fruitless. Finally a the end of the summer following my 3rd year things picked up.</p>
+
+<p>I was interning at Soldsie (at the time Central.ly) and our application was built with Ruby on Rails. I was asked to go to a speed-interviewing event where I met with 40 or so &ldquo;students&rdquo; that had just gone through a 10-week intensive Ruby on Rails course. The common theme throughout the day was that people had entered the course with little knowledge of coding and came out feeling empowered to build, the same experience that I had felt after learning SQL. I was jealous and I wanted that feeling back and it pumped me up for the two semesters of Java that I had signed up for.</p>
+
+<p>My first semester of Java programming consisted of learning the variable types, O-O principles, control structures, and interacting with external sources (inputs, databases, files). The second semester was web-development focused and utilized the J2EE framework&rsquo;s various components. I was taking class at the same time called System&rsquo;s Analysis that required that we build an app which I will discuss in a future post. I lead a team of 9 using our knowledge-in-progress of J2EE and set up a web server, built out the basic app, and then got it up and running within the first week. That semester was filled with headaches from staring at code until it worked and trying to develop as a team. Although it was harsh at times I treated it as an opportunity to solidify my knowledge from the first semester of Java and build upon what I was learning in class. Even though it wasn&rsquo;t always pleasant that fire to make something and that feeling of empowerment from knowing how to build something came back.</p>
+
+<p>So that has been my programming experience prior to rails. While my background is fairly scattered I think I have gathered a solid understanding of how applications work, how databases work, and the web-development process.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[State your purpose]]></title>
-    <link href="http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose/"/>
-    <updated>2013-09-25T09:21:00-07:00</updated>
-    <id>http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose</id>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/state-your-purpose/"/>
+    <updated>2013-06-12T09:04:34-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/state-your-purpose</id>
     <content type="html"><![CDATA[<p>Well, this is my first blog post (outside the traditional hello world), both on this platform and in my lifetime. Being new my first thought is to discuss my intentions for this blog as well as how it came to be so I will answer the latter and then the former so it all makes sense.</p>
 
 <!--more-->
@@ -34,6 +56,17 @@ Well as a mentioned previously my intentions are to practice Rails as this has b
 1. Updates to the blog as they come, at an extremely granular level<br>
 2. My experience with coding and OO-principles <br>
 3. My process for learning rails so far <br></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, [Octopress]!]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/hello/"/>
+    <updated>2013-06-12T09:04:09-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/hello</id>
+    <content type="html"><![CDATA[<p>Hello world!</p>
+
+<p>Edit: This wa originally my &ldquo;Hello, Rails!&rdquo; post but as this is no longer my rails blog and I am using Octopress I figured it made sense to chang it up.</p>
 ]]></content>
   </entry>
   

@@ -1,19 +1,79 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose/</loc>
-        <lastmod>2013-09-25T09:25:40-07:00</lastmod>
+        <loc>http://ChrisMeier.github.io/blog/2013/06/12/hello/</loc>
+        <lastmod>2013-09-25T15:39:07-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/blog/2013/06/12/state-your-purpose/</loc>
+        <lastmod>2013-09-25T15:37:03-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/blog/2013/06/12/html-element-test/</loc>
+        <lastmod>2013-09-25T15:38:31-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://ChrisMeier.github.io/blog/2013/06/12/problem-can-can-not-working-in-production/
+        </loc>
+        <lastmod>2013-09-25T15:37:19-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/blog/2013/06/12/how-i-ended-up-here/</loc>
+        <lastmod>2013-09-25T15:38:59-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://ChrisMeier.github.io/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails/
+        </loc>
+        <lastmod>2013-09-25T15:38:43-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/blog/2013/06/23/using-git-with-amazon-ec2/</loc>
+        <lastmod>2013-09-25T15:36:33-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/blog/2013/07/30/static-pages-with-rails/</loc>
+        <lastmod>2013-09-25T15:36:54-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/blog/2013/09/20/non-rails-posts/</loc>
+        <lastmod>2013-09-25T15:38:16-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/about.html</loc>
+        <lastmod>2013-09-25T12:54:51-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/archives/</loc>
+        <lastmod>2013-09-25T15:39:07-07:00</lastmod>
     </url>
     <url>
         <loc>http://ChrisMeier.github.io/blog/archives/</loc>
-        <lastmod>2013-09-25T09:25:40-07:00</lastmod>
+        <lastmod>2013-09-25T15:39:07-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/blog/</loc>
+        <lastmod>2013-09-25T15:39:07-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/humans.txt</loc>
+        <lastmod>2013-09-25T12:52:56-07:00</lastmod>
     </url>
     <url>
         <loc>http://ChrisMeier.github.io/</loc>
-        <lastmod>2013-09-25T09:25:40-07:00</lastmod>
+        <lastmod>2013-09-25T15:39:07-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/projects/</loc>
+        <lastmod>2013-09-25T15:39:07-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://ChrisMeier.github.io/resources.html</loc>
+        <lastmod>2013-09-25T12:52:56-07:00</lastmod>
     </url>
     <url>
         <loc>http://ChrisMeier.github.io/robots.txt</loc>
-        <lastmod>2013-09-25T00:47:37-07:00</lastmod>
+        <lastmod>2013-09-25T12:52:56-07:00</lastmod>
     </url>
 </urlset>

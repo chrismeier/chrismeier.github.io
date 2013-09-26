@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hello | Chris Meier's Blog]]></title>
+  <link href="http://ChrisMeier.github.io/blog/categories/hello/atom.xml" rel="self"/>
+  <link href="http://ChrisMeier.github.io/"/>
+  <updated>2013-09-25T18:02:58-07:00</updated>
+  <id>http://ChrisMeier.github.io/</id>
+  <author>
+    <name><![CDATA[Chris Meier]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, [Octopress]!]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/hello/"/>
+    <updated>2013-06-12T09:04:09-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/hello</id>
+    <content type="html"><![CDATA[<p>Hello world!</p>
+
+<p>Edit: This wa originally my &ldquo;Hello, Rails!&rdquo; post but as this is no longer my rails blog and I am using Octopress I figured it made sense to chang it up.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: coding | Chris Meier's Blog]]></title>
+  <title><![CDATA[Category: Coding | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-09-25T11:13:34-07:00</updated>
+  <updated>2013-09-25T18:02:58-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[State your purpose]]></title>
-    <link href="http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose/"/>
-    <updated>2013-09-25T09:21:00-07:00</updated>
-    <id>http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose</id>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/state-your-purpose/"/>
+    <updated>2013-06-12T09:04:34-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/state-your-purpose</id>
     <content type="html"><![CDATA[<p>Well, this is my first blog post (outside the traditional hello world), both on this platform and in my lifetime. Being new my first thought is to discuss my intentions for this blog as well as how it came to be so I will answer the latter and then the former so it all makes sense.</p>
 
 <!--more-->

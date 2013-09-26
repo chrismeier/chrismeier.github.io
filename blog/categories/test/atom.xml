@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Test | Chris Meier's Blog]]></title>
+  <link href="http://ChrisMeier.github.io/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://ChrisMeier.github.io/"/>
+  <updated>2013-09-25T18:02:58-07:00</updated>
+  <id>http://ChrisMeier.github.io/</id>
+  <author>
+    <name><![CDATA[Chris Meier]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTML Element Test]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/html-element-test/"/>
+    <updated>2013-06-12T09:05:58-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/html-element-test</id>
+    <content type="html"><![CDATA[<p>Well I happen to not be that well versed in how to prevent XSS and escaping characters so it was a surprise to me when Rails spat out my blog posts without any of the return lines (or breaks if you want to call them that). I have since found a solution online that I shall detail later but for the time being I wanted to test various HTML elements and see how they carry over when rendered. So here they are:</p>
+
+<!--more-->
+
+
+<p>Bold:
+I heard it was best to inflate oneself visually when in the presence of a bear so as to deter an attack</p>
+
+<p>Italicize:
+I seem to be falling to the side. (Thought Bubble: Was the leaning tower of pisa built in a time that appreciated italics?)</p>
+
+<p>Underline:
+DO YOU SEE ME? I have been.. oh wait, where did it go <em>snaps fingers</em> Ah, this is much better (hopefully</p>
+
+<p>Code:
+ALT + F4 wins you $30,000 &hellip; suckers&hellip;.</p>
+]]></content>
+  </entry>
+  
+</feed>

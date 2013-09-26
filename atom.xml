@@ -4,7 +4,7 @@
   <title><![CDATA[Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-09-25T11:13:34-07:00</updated>
+  <updated>2013-09-25T18:02:58-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -14,10 +14,225 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Non-Rails Posts]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/09/20/non-rails-posts/"/>
+    <updated>2013-09-20T11:07:18-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/09/20/non-rails-posts</id>
+    <content type="html"><![CDATA[<p>So I found myself wanting to post about things other than rails that sort of tie into software development but are not closely enough tied to rails that I would want to include them in the core of the site.</p>
+
+<!--more-->
+
+
+<p>I will be posting here about things ranging from interesting business trends to tools I use to random tie-bits I find on the internet that I want to talk more about.</p>
+
+<p>Edit: After moving to Octopress I&rsquo;ve decided to use the &lsquo;Off-topic&rsquo; tag instead of a seperate feed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Static Pages with Rails]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/07/30/static-pages-with-rails/"/>
+    <updated>2013-07-30T17:30:49-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/07/30/static-pages-with-rails</id>
+    <content type="html"><![CDATA[<p>Recently I wanted to put together and &ldquo;About Me&rdquo; and a &ldquo;Resources&rdquo; page but I didn&rsquo;t know how do this within rails.</p>
+
+<!--more-->
+
+
+<p>Turns out it was pretty simple but I should acknowledge that my solution isn&rsquo;t the only option and if you site is mostly static I&rsquo;ve read that Jekyll might be a good option.</p>
+
+<p>To create static pages I first made a controller for those pages:</p>
+
+<p>rails g controller pages</p>
+
+<p>From there I went to the newly created &ldquo;pages&rdquo; folder within my views. I added a new file: about.html.erb and put the static HTML that I wanted to serve up in here.</p>
+
+<p>The final touch was adding routes so I could link to the files. Within my routes.rb I added:</p>
+
+<p>get &lsquo;/about&rsquo; => &lsquo;pages#about&rsquo;</p>
+
+<p>And boom, just like that I am able to link to these files in my header and easily serve up HTML pages without having to get extra gems or get to crazy with things.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Git With Amazon EC2]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/23/using-git-with-amazon-ec2/"/>
+    <updated>2013-06-23T13:14:32-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/23/using-git-with-amazon-ec2</id>
+    <content type="html"><![CDATA[<p>There are various ways to use the git version control system especially with EC2 and I&rsquo;m sure there is plenty of documentation on how to do it but I found that most of the information was scattered and not straightforward enough so I have decided to write a post explaining my solution.</p>
+
+<!--more-->
+
+
+<p>Setting this up assumes that you have git installed on your local machine, a linux distro running on EC2 (Ubuntu 12 in my case), and a GitHub account. If you don&rsquo;t have git set up yet this is a great guide.</p>
+
+<p>My solution is a little more manual than I would like it to be but that is something I will change down the road once I learn more about git and version control I will provide a new post.</p>
+
+<p>The current end result from these instructions is your local machine for coding and testing, a GitHub repository for storing the files, and having your EC2 instance pull the latest versions.</p>
+
+<p>You&rsquo;ll first need to initialize your git repository locally. It is a simple command that you run from within your project&rsquo;s folder:
+$ git init</p>
+
+<p>This will tell git that you want to create a repository within your project&rsquo;s folder. A repository serves the same purpose as storing the files on GitHub only it is local copy (See Distributed Version Control Systems for more info).</p>
+
+<p>You&rsquo;ll now want to set up your remote repository on GitHub and you can do that through this page. After creating your remote repository you will want to add it to your local so it knows what to connect to.
+$ git remote add origin git@github.com:username/projectname.git</p>
+
+<p>This will have added the git repository in your GitHub account and given it a local reference name of origin.</p>
+
+<p>At this point to interact with your remote repository further (push, pull etc) you will need to have the proper permission to do so and this is achieved by creating an ssh key:
+$ ssh-keygen -t rsa -C &ldquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#121;&#x6f;&#x75;&#114;&#x65;&#109;&#x61;&#x69;&#x6c;&#64;&#x65;&#x6d;&#97;&#105;&#108;&#x70;&#x72;&#x6f;&#x76;&#105;&#100;&#101;&#114;&#x2e;&#x63;&#111;&#109;">&#121;&#x6f;&#117;&#x72;&#101;&#x6d;&#97;&#105;&#108;&#x40;&#x65;&#x6d;&#97;&#105;&#x6c;&#112;&#114;&#x6f;&#118;&#x69;&#x64;&#x65;&#114;&#x2e;&#99;&#111;&#x6d;</a>&rdquo;</p>
+
+<p>Accept the default location of the key (likely in ~/.ssh) but just make note of it. If you want a password in addition to use your ssh key you can enter that here. Note: It will ask you for your password every time you send a request to your GitHub repo. You will then want to get the contents of the .pub file it created:
+$ cat ~/.ssh/id_rsa</p>
+
+<p>Take the output from that command can copy and paste it into the new key prompt on git hub. This lets GitHub know what key you will be using to connect with your repository.</p>
+
+<p>Okay so now that we have created the repository both local and remote, created a link between the two calling the remote origin, and created a key that will allow for the two to interact.</p>
+
+<p>So now we to add changed files to the staging area to let git know that you want to include them in your next commit. The way git works is by taking snapshots of a collection of files. To take a snapshot of your files you commit them to the repository. Before we commit we have to tell git which files we want to include in the snapshot and this is done through the git add command:
+$ git add . or $ git add filename.extension</p>
+
+<p>You can check to make sure that those files have been marked to be included in the next commit with the command:
+$ git status</p>
+
+<p>Once we are happy with the files that have been added we issue the commit command to take a snapshot:
+$ git commit -m &ldquo;Your message/note about the commit goes here&rdquo;</p>
+
+<p>The -m option allow you to add a note to the commit to help you keep track of what each commit did.</p>
+
+<p>We are now ready to copy those changes to our remote repository:
+$ git push origin master</p>
+
+<p>The git push command tells git that you want to push your code to another repository and this case the one that we called origin (our remote repo) and to the master branch. If you are just starting out the master branch is the main branch and also the default that is created.</p>
+
+<p>At this point you can go to GitHub and confirm that your files are appearing there.</p>
+
+<p>To get the code on the server we will undergo a similar process. You will need to make a folder to store your project in:
+$ mkdir ProjectFolderName</p>
+
+<p>Change directory:
+$ cd ProjectFolderName</p>
+
+<p>You will need to initialize a git repository (git init), make an ssh-key, add it on GitHub, and add your remote repo from GitHub; you can follow the same steps as before, the only difference being the machine you are doing it on.</p>
+
+<p>The last step is to pull your code from the repository to your server:
+$ git pull origin master</p>
+
+<p>You should now have a copy of the code on your server. Remember, you will need to re-run db migrations if you haven&rsquo;t already.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How [Not] to Render HTML With Ruby on Rails]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails/"/>
+    <updated>2013-06-15T01:37:02-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>So after putting up my second post I realized that rails had escaped all of my line breaks and when it came time to show the post it wasn&rsquo;t rendering them. I jumped on google and looked for an answer and the result was a solution on Stack Overflow and an understanding of why it had done that.</p>
+
+<!--more-->
+
+
+<p>So what was the solution? Well it turns out you just need to tell Rails to substitute the the escaped characters with html line breaks:</p>
+
+<p>&lt;%= @post.body.gsub(/\n/,&lsquo;<br/>&rsquo;) %></p>
+
+<p>Easy enough right? Well that now allows for link breaks to occur which is great, but when I viewed my posts now, all I was seeing was my text split up by a bunch of <br/>
+tags.</p>
+
+<p>The next step was to tell rails, &ldquo;Hey it&rsquo;s okay to render the HTML tags in here&rdquo;. To accomplish this we simply add the .html_safe method to the end of the existing render command.</p>
+
+<p>&lt;%= @post.body.gsub(/\n/,&lsquo;<br/>&rsquo;).html_safe %></p>
+
+<p>So all is great right? No. Allowing HTML to be rendered can pose some security risks or allow for stupid errors if you mess something up like I did below:</p>
+
+<p>In forgetting to close a link tag I ended up messing up my HTML and the result was submitting a new post every time I hit save. So imagine if your users had this power? Or if they wanted to perform some malicious attack such as XSS? That doesn&rsquo;t bode so well for you so allowing user submitted text to be rendered is not the best idea.</p>
+
+<p>I&rsquo;m sure someone else has a better solution but for the time being my choice is to understand that I have a security risk in my ability to post so as long as I properly close tags and keep the ability to post to myself I should be good to go.</p>
+
+<p>If you have a better solution, I would love to know</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How I Ended Up Here]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/how-i-ended-up-here/"/>
+    <updated>2013-06-12T20:41:02-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/how-i-ended-up-here</id>
+    <content type="html"><![CDATA[<p>So I thought my experience with coding would be a good topic to review to provide a clearer explanation of the path I am on. Coding has always ben something that has interested me, but I have always found an excuse not to pursue it more aggressively. When I was in 7th and 8th grade I took a computer class where we went over HTML and played around with various elements and ran them off our local computer. Well I wanted more of it so after a while I worked on my own site at home and eventually hosted it on Geocities. It was a crap site with the usual tiled image background, links to sites I liked and maybe a review or two of movies that I had just seen. I would say that this experience is what really convinced me that I could construct some sort of code in a meaningful way.</p>
+
+<!--more-->
+
+
+<p>Fast forward 5 years and I am in college taking Management Information System &mdash; MIS (my option) courses and am getting a better understanding of the structure of applications, networking and the functions of a server. My second year I took a SQL course and entered it excited to learn another language and the structure of databases was always something that interested me. I finished the course top in the class, with an fantastic understanding of the RDB&rsquo;s and SQL, and was offered a position as a TA which I&rsquo;ve now held for 4 semesters.</p>
+
+<p>Knowing SQL was empowering but it became clear it was not a language that I could make something cool with. I had ideas for iOS apps and tried looking into Objective-C but was quickly discouraged by the recommendations that I should know other languages first. My momentum took a hit which was compounded by taking a course on PHP and MySQL which was ultimately fruitless. Finally a the end of the summer following my 3rd year things picked up.</p>
+
+<p>I was interning at Soldsie (at the time Central.ly) and our application was built with Ruby on Rails. I was asked to go to a speed-interviewing event where I met with 40 or so &ldquo;students&rdquo; that had just gone through a 10-week intensive Ruby on Rails course. The common theme throughout the day was that people had entered the course with little knowledge of coding and came out feeling empowered to build, the same experience that I had felt after learning SQL. I was jealous and I wanted that feeling back and it pumped me up for the two semesters of Java that I had signed up for.</p>
+
+<p>My first semester of Java programming consisted of learning the variable types, O-O principles, control structures, and interacting with external sources (inputs, databases, files). The second semester was web-development focused and utilized the J2EE framework&rsquo;s various components. I was taking class at the same time called System&rsquo;s Analysis that required that we build an app which I will discuss in a future post. I lead a team of 9 using our knowledge-in-progress of J2EE and set up a web server, built out the basic app, and then got it up and running within the first week. That semester was filled with headaches from staring at code until it worked and trying to develop as a team. Although it was harsh at times I treated it as an opportunity to solidify my knowledge from the first semester of Java and build upon what I was learning in class. Even though it wasn&rsquo;t always pleasant that fire to make something and that feeling of empowerment from knowing how to build something came back.</p>
+
+<p>So that has been my programming experience prior to rails. While my background is fairly scattered I think I have gathered a solid understanding of how applications work, how databases work, and the web-development process.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Problem: Can Can (not) working in production]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/problem-can-can-not-working-in-production/"/>
+    <updated>2013-06-12T09:08:18-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/problem-can-can-not-working-in-production</id>
+    <content type="html"><![CDATA[<p>So I&rsquo;ve been a huge fan and consumer of Ryan Bates RailsCasts. I find them very helpful with understanding the process of building a rails app from scratch or adding on features. My biggest issue is finding a place to start when coding. I&rsquo;m presented with my existing code and I just don&rsquo;t know how to take that first step in building out my ideas. I&rsquo;m getting better at it but a lot of credit is due to the RailsCasts and helping me understand the thought process one goes through when writing code.</p>
+
+<!--more-->
+
+
+<p>My current dilemma is that I am unable to run the gem CanCan in my production environment. It works fine in development and I able to :manage without issue. When I switch it over to production it seems that the roles never trigger. I am using a boolean in the User model to allow myself to define whether or not I should have permissions.</p>
+
+<p>My first check was to make sure that my User record had the proper boolean in my production environment.</p>
+
+<p>RAILS_ENV=production rails console
+irb> User.all</p>
+
+<p>At this point I realized that my User record in the production database did not have the boolean turned on. Should be a simple fix, just grab the id (## used in its place below) of my user that I wanted the turn on the roles for.</p>
+
+<p>irb> User.find(##).update_attribute(:attribute_name, &lsquo;True&rsquo;)</p>
+
+<p>&mdash;&mdash;Woops&mdash;&mdash;</p>
+
+<p>Well initially I wanted to write this post as a way of sharing my problem and later making a post on how I fixed it. In going through code snippets to make sure I had the right syntax I found that the boolean that I had at one point set to true (or so I believed) in fact was false. So, after going through the above Can Can is now working in my production environment. In fact, it was always working, I was just being ignorant about the possibility of having made a mistake. Lesson learned.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML Element Test]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/html-element-test/"/>
+    <updated>2013-06-12T09:05:58-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/html-element-test</id>
+    <content type="html"><![CDATA[<p>Well I happen to not be that well versed in how to prevent XSS and escaping characters so it was a surprise to me when Rails spat out my blog posts without any of the return lines (or breaks if you want to call them that). I have since found a solution online that I shall detail later but for the time being I wanted to test various HTML elements and see how they carry over when rendered. So here they are:</p>
+
+<!--more-->
+
+
+<p>Bold:
+I heard it was best to inflate oneself visually when in the presence of a bear so as to deter an attack</p>
+
+<p>Italicize:
+I seem to be falling to the side. (Thought Bubble: Was the leaning tower of pisa built in a time that appreciated italics?)</p>
+
+<p>Underline:
+DO YOU SEE ME? I have been.. oh wait, where did it go <em>snaps fingers</em> Ah, this is much better (hopefully</p>
+
+<p>Code:
+ALT + F4 wins you $30,000 &hellip; suckers&hellip;.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[State your purpose]]></title>
-    <link href="http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose/"/>
-    <updated>2013-09-25T09:21:00-07:00</updated>
-    <id>http://ChrisMeier.github.io/blog/2013/09/25/state-your-purpose</id>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/state-your-purpose/"/>
+    <updated>2013-06-12T09:04:34-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/state-your-purpose</id>
     <content type="html"><![CDATA[<p>Well, this is my first blog post (outside the traditional hello world), both on this platform and in my lifetime. Being new my first thought is to discuss my intentions for this blog as well as how it came to be so I will answer the latter and then the former so it all makes sense.</p>
 
 <!--more-->
@@ -34,6 +249,17 @@ Well as a mentioned previously my intentions are to practice Rails as this has b
 1. Updates to the blog as they come, at an extremely granular level<br>
 2. My experience with coding and OO-principles <br>
 3. My process for learning rails so far <br></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello, [Octopress]!]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/06/12/hello/"/>
+    <updated>2013-06-12T09:04:09-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/06/12/hello</id>
+    <content type="html"><![CDATA[<p>Hello world!</p>
+
+<p>Edit: This wa originally my &ldquo;Hello, Rails!&rdquo; post but as this is no longer my rails blog and I am using Octopress I figured it made sense to chang it up.</p>
 ]]></content>
   </entry>
   
