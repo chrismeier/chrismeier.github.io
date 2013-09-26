@@ -1,5 +1,6 @@
-<ul class="nav">
-    {% for link in site.navigation %}
-        <li {% if page.url == link.url %}class="active"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>
-    {% endfor %}
+<ul class="menu pull-right">
+  <li><a href="{{ root_url }}/">Home</a></li>
+  <li><a href="{{ root_url }}/blog/">Blog</a></li>
+  <li><a href="{{ root_url }}/about.html">About</a></li>
+  <li><a href="{{ root_url }}/resources.html">Resources</a></li>
 </ul>
