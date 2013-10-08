@@ -1,0 +1,403 @@
+
+
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Forums in Rails - Chris Meier's Blog</title>
+    <meta name="author" content="Chris Meier">
+    
+    <meta name="description" content="Forums in Rails Oct 8th, 2013 Rails Forums Forem Gem Comments Let&#8217;s get a forum going So I recently wanted to tack on a forum to my &hellip;">
+    
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="canonical" href="http://ChrisMeier.github.io/blog/2013/10/08/rails-forum-with-forem-gem">
+    <link href="/favicon.png" rel="icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="//atom.xml" rel="alternate" title="Chris Meier's Blog" type="application/atom+xml">
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Chris Meier's Blog</a>
+</div>
+
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/about.html">About</a></li>
+  <li><a href="/resources.html">Resources</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  <header>
+  
+  <h1 class="title indent">Forums in Rails</h1>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2013-10-08T14:19:00-07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Oct 8<span>th</span>, 2013</time>
+    
+
+
+
+  
+  <div class="pull-left">
+    <i class="icon-tags"></i>
+    <ul class="tags unstyled">
+    
+      <li><a href="/blog/categories/Rails/">Rails</a></li>
+    
+      <li><a href="/blog/categories/Forums/">Forums</a></li>
+    
+      <li><a href="/blog/categories/Forem/">Forem</a></li>
+    
+      <li><a href="/blog/categories/Gem/">Gem</a></li>
+    
+    </ul>
+  </div>
+  
+
+    
+      <a class="pull-right" href="#disqus_thread">
+        Comments <i class="icon-comment"></i>
+      </a>
+    
+  </div>
+  
+</header>
+
+
+
+
+  <h3> Let&#8217;s get a forum going </h3>
+
+
+<p>So I recently wanted to tack on a forum to my application. The below post is my process in deciding on what forum software to choose and the considerations I made along the way, as well as what I ultimately ended up using.</p>
+
+<p>I started by identifying two roads:<br/></p>
+
+<ol>
+<li>Build a forum system?</li>
+<li>Use a pre-built forum software.</li>
+</ol>
+
+
+<p>Well I am learning Ruby on Rails right now so building a forum system that adds little value to the overall value of the main application seems like a poor allocation of resrouces. So #2 seems like the right option, so what are my options?</p>
+
+<!-- more -->
+
+
+<h3>Existing Forum Software</h3>
+
+<p>There are some fantastic forums out there that I would ideally like to have to have my forum look like so intially I started by googling what software was being used by those forums. What I found was that there was three very popular fourms softwares:<br/></p>
+
+<ul>
+<li><a href="https://www.phpbb.com">PhpBB</a></li>
+<li><a href="http://www.invisionpower.com/apps/board/">IPboard</a></li>
+<li><a href="http://xenforo.com">XenoForo</a></li>
+</ul>
+
+
+<p>When I was deciding I chose IP board intiailly based on its popularity amongst forums I visited as well as the apparent ease of use. So next came the question of how do I install it?</p>
+
+<h3>Is a PHP Forum software the right choice</h3>
+
+<p>All three of these options are PHP based meaning that I would have to run it as a separate app on my server. This poses a couple of issues:</p>
+
+<ol>
+<li>How many resources am I allocating to another app?</li>
+<li>How do I manage users between the two apps?</li>
+<li>Can I run two apps on the main server?</li>
+<li>How much time am I taking away from learning RoR by dealing with a PHP based application as well?</li>
+</ol>
+
+
+<p>Some of these I dug into a little bit and others I just answered based on past knowledge/gut feeling.</p>
+
+<ol>
+<li>I see this causing two issues the first being CPU and the second being hard drive space. So CPU probably isn&rsquo;t a huge issue initially but if the app needs to be scalable then I am taking away resources processes from my rails app and dedicating them to the PHP one. If there was a way to dynamically allocate those (which there may very well be, I just haven&rsquo;t looked, and who knows it my do it automatically) then this might not be that big of an issue. With the hard drive space, it really isn&rsquo;t so much a matter of space but more that of the database and how saving forum data and rails app data would be handled. Apparently there is a way to make it so that you can use the same database to interact between the two apps which would make this a viable option but rails makes managing a database</li>
+<li>I did a minimal amount of research into this as everything I saw at face-value seemed relatively complex for where I am at and would require me dedicating time to get up-to-speed in areas of rails that might not be important in pushing towards building my MVP aside from the forum.</li>
+<li>This apparently is not to hard but you have to make it so that the two apps run behind a layer that manages port switching. While it is doable it is an extra step and one more thing to manage/configure. Not great.</li>
+<li>Well I already know a little bit of PHP and I&rsquo;d imagine that most of the time would be spent making sure the styling is consistent across both apps. Again, one more step to take but the forum software seems like it would help with making the forum look pretty so maybe not all that bad and as a plus it might look better than what I&rsquo;m already doing.</li>
+</ol>
+
+
+<h3>Using Forem</h3>
+
+<p>Ultimately I decided that using the popular solutions that were PHP based was not the best way to efficiently implement a forum solution without a huge hit to development time and resources. This is when I began investigating forums that run on Rails. From there I found a gem caled <a href="https://github.com/radar/forem" title="Github Forem">forem</a> developed by <a href="https://twitter.com/ryanbigg">Ryan Bigg</a>. Once you have added the gem to your gemfile and run the bundle command there is a quick install command to get you set up. From there you just run migrations to add the various models for the forum. This also assumes that you have a User table (I believe), and works incredibly well if you are using the devise authentication gem. From there you need to set up some basic methods that point to a username and email.</p>
+
+<h3>Issues to note</h3>
+
+<p>I only ran into two Hickups along the way one being because I was using Rails 4.</p>
+
+<p><b>Paths break with Rails 4&hellip;sort of:</b>
+If you are using Rails 4 you will first want to make sure you are on the Rails 4 branch of forem:</p>
+
+<figure class='code'><figcaption><span>APP_FOLDER/Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;forem&#39;</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s2">&quot;radar/forem&quot;</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s2">&quot;rails4&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When you run your application you might find that certain paths are not found when you go to your URL/forem/ . Based on the GitHub issues pages I have gathered that is has to to with the scope of forem and as it runs as a seperate rails engine it is unable to see the paths within the main app. To solve this you need to put &ldquo;main_path.&rdquo; in front of the paths.<br/>
+Example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sx">% link_to </span><span class="s2">&quot;Sign In&quot;</span><span class="p">,</span> <span class="n">main_app</span><span class="o">.</span><span class="n">user_login_path</span> <span class="o">%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><b>Themeing</b>
+The other issue I ran into was with applying a theme. There are several gems already out there. I chose to use the <a href="https://github.com/radar/forem-theme-base">base</a> theme but there is one for <a href="https://github.com/radar/forem-bootstrap">Twitter Bootstrap</a> as well as an alternate theme called <a href="https://github.com/radar/forem-theme-twist">Twist</a>.</p>
+
+<p>You just need to add thesse to your gem file:</p>
+
+<figure class='code'><figcaption><span>APP_FOLDER/Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;forem&#39;</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s2">&quot;radar/forem&quot;</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s2">&quot;rails4&quot;</span>
+</span><span class='line'><span class="n">gem</span> <span class="s1">&#39;forem-theme-base&#39;</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">&#39;radar/forem-theme-base&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>You will additioanlly need to run the theme as a Rails engine. I wasn&rsquo;t to clear on what this meant but after digging into it it looks like all you need to do is set up an intializer by making a file called forem.rb under your lib folder:</p>
+
+<figure class='code'><figcaption><span>APP_FOLDER/Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;forem&#39;</span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Forem</span>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">Theme</span>
+</span><span class='line'>    <span class="k">module</span> <span class="nn">Base</span>
+</span><span class='line'>      <span class="k">class</span> <span class="nc">Engine</span> <span class="o">&lt;</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:Engine</span>
+</span><span class='line'>        <span class="no">Forem</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="ss">:base</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Final Thoughts</h3>
+
+<p>Setting up a forum only took a couple of hours, mostly doing research, and then playing around with forem once I had it installed. Right now it is in beta form (I believe) but the development roadmap looks pretty exciting. I haven&rsquo;t spent a whole lot of time styling it but being able to to customize the views fairly easily will make this a pretty flexibile forum that will fit seemlessly in with the rest of the app. My only concern at this point is making sure that the forum does not overpower the main app in terms of bogging down performance by filling up the database.</p>
+
+
+</article>
+
+ 
+<section id="disqus">
+  <h1 class="indent title">Comments</h1>
+  <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+        
+        </div>
+        
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Follow me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    <li><a class="github" href="//github.com/ChrisMeier"><i class="icon-github"></i> Github</a></li>
+    
+    <li><a class="gplus" href="//plus.google.com/102709861765506118545"><i class="icon-google-plus-sign"></i> Google+</a></li>
+    <li><a class="linkedin" href="//linkedin.com/in/chrismeier1"><i class="icon-linkedin-sign"></i> LinkedIn</a></li>
+    
+    <li><a class="stackoverflow" href="//stackoverflow.com/users/2154894/chrismeier"><i class="icon-stackexchange"></i> StackOverflow</a></li>
+    <li><a class="twitter" href="//twitter.com/chris_meier91"><i class="icon-twitter"></i> Twitter</a></li>
+    
+  </ul>
+</section>
+
+  
+  <section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/rails-forum-with-forem-gem/">Forums in Rails</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/non-rails-posts/">Non-Rails Posts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/static-pages-with-rails/">Static Pages with Rails</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/23/using-git-with-amazon-ec2/">Using Git With Amazon EC2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/15/how-not-to-render-html-with-ruby-on-rails/">How [Not] to Render HTML With Ruby on Rails</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section id="github-repos" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    GitHub Repos
+    
+    <small class="pull-right">
+      <a class="btn" href="//github.com/ChrisMeier" title="@ChrisMeier on GitHub" target="_blank">
+        <i class="icon-external-link"></i>
+      </a>
+    </small>
+    
+  </h1>
+  <ul id="gh_repos" class="divided">
+    <li class="loading">
+      <i class="icon-spinner icon-spin"></i>
+    </li>
+  </ul>
+</section>
+
+
+
+
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+    
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  All content by Chris Meier and licenced under <a href="//creativecommons.org/licenses/by-nc-sa/3.0/ie/">Creative Commons</a>.<br>
+  Code under <a href="//github.com/coogie/oscailte/blob/master/README.md">MIT Licence</a>.
+</p>
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-41669279-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+
+<script>
+  var disqus_shortname = 'chris-on-rails';
+  
+    
+    // var disqus_developer = 1;
+    var disqus_identifier = 'http://ChrisMeier.github.io/blog/2013/10/08/rails-forum-with-forem-gem/';
+    var disqus_url = 'http://ChrisMeier.github.io/blog/2013/10/08/rails-forum-with-forem-gem/';
+    var disqus_script = 'embed.js';
+  
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    if (!window.jXHR){
+      var jxhr = document.createElement('script');
+      jxhr.type = 'text/javascript';
+      jxhr.src = '/javascripts/libs/jXHR.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jxhr, s);
+    }
+
+    github.showRepos({
+      user: 'chrismeier',
+      count: 2,
+      skip_forks: false,
+      target: '#gh_repos'
+    });
+  });
+</script>
+<script src="/javascripts/github.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
