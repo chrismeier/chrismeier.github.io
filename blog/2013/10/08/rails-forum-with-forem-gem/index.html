@@ -122,16 +122,16 @@
 <p>I started by identifying two roads:<br/></p>
 
 <ol>
-<li>Build a forum system?</li>
+<li>Build a forum system.</li>
 <li>Use a pre-built forum software.</li>
 </ol>
 
 
-<p>Well I am learning Ruby on Rails right now so building a forum system that adds little value to the overall value of the main application seems like a poor allocation of resrouces. So #2 seems like the right option, so what are my options?</p>
+<p>Well I am learning Ruby on Rails right now so building a forum system that adds a little value to the overall value of the main application seems like a poor allocation of resources. So #2 seems like the right option, so what are my options?</p>
 
 <h3>Existing Forum Software</h3>
 
-<p>There are some fantastic forums out there that I would ideally like to have to have my forum look like so intially I started by googling what software was being used by those forums. What I found was that there was three very popular fourms softwares:<br/></p>
+<p>There are some fantastic forums out there that I would ideally like to have to have my forum look like so intially I started by googling what software was being used by those forums. What I found was that there was three very popular forum softwares:<br/></p>
 
 <ul>
 <li><a href="https://www.phpbb.com">PhpBB</a></li>
@@ -157,7 +157,7 @@
 <p>Some of these I dug into a little bit and others I just answered based on past knowledge/gut feeling.</p>
 
 <ol>
-<li>I see this causing two issues the first being CPU and the second being hard drive space. So CPU probably isn&rsquo;t a huge issue initially but if the app needs to be scalable then I am taking away resources processes from my rails app and dedicating them to the PHP one. If there was a way to dynamically allocate those (which there may very well be, I just haven&rsquo;t looked, and who knows it my do it automatically) then this might not be that big of an issue. With the hard drive space, it really isn&rsquo;t so much a matter of space but more that of the database and how saving forum data and rails app data would be handled. Apparently there is a way to make it so that you can use the same database to interact between the two apps which would make this a viable option but rails makes managing a database</li>
+<li>I see this causing two issues the first being CPU and the second being hard drive space. So CPU probably isn&rsquo;t a huge issue initially but if the app needs to be scalable then I am taking away processes from my rails app and dedicating them to the PHP one. If there was a way to dynamically allocate those (which there may very well be, I just haven&rsquo;t looked, and who knows it might do it automatically) then this might not be that big of an issue. With the hard drive space, it really isn&rsquo;t so much a matter of space but more that of the database and how saving forum data and rails app data would be handled. Apparently there is a way to make it so that you can use the same database to interact between the two apps which would make this a viable option but rails makes managing a database incredibly easy.</li>
 <li>I did a minimal amount of research into this as everything I saw at face-value seemed relatively complex for where I am at and would require me dedicating time to get up-to-speed in areas of rails that might not be important in pushing towards building my MVP aside from the forum.</li>
 <li>This apparently is not to hard but you have to make it so that the two apps run behind a layer that manages port switching. While it is doable it is an extra step and one more thing to manage/configure. Not great.</li>
 <li>Well I already know a little bit of PHP and I&rsquo;d imagine that most of the time would be spent making sure the styling is consistent across both apps. Again, one more step to take but the forum software seems like it would help with making the forum look pretty so maybe not all that bad and as a plus it might look better than what I&rsquo;m already doing.</li>
@@ -166,11 +166,11 @@
 
 <h3>Using Forem</h3>
 
-<p>Ultimately I decided that using the popular solutions that were PHP based was not the best way to efficiently implement a forum solution without a huge hit to development time and resources. This is when I began investigating forums that run on Rails. From there I found a gem caled <a href="https://github.com/radar/forem" title="Github Forem">forem</a> developed by <a href="https://twitter.com/ryanbigg">Ryan Bigg</a>. Once you have added the gem to your gemfile and run the bundle command there is a quick install command to get you set up. From there you just run migrations to add the various models for the forum. This also assumes that you have a User table (I believe), and works incredibly well if you are using the devise authentication gem. From there you need to set up some basic methods that point to a username and email.</p>
+<p>Ultimately I decided that using the popular solutions that were PHP based was not the best way to efficiently implement a forum solution without a huge hit to development time and resources. This is when I began investigating forums that run on Rails. From there I found a gem called <a href="https://github.com/radar/forem" title="Github Forem">forem</a> developed by <a href="https://twitter.com/ryanbigg">Ryan Bigg</a>. Once you have added the gem to your gemfile and run the bundle command there is a quick install command to get you set up. From there you just run migrations to add the various models for the forum. This also assumes that you have a User table (I believe), and works incredibly well if you are using the <a href="https://github.com/plataformatec/devise">devise</a> authentication gem. From there you&rsquo;ll need to set up some basic methods that point to a username and email, in the case of using devise, your current_user method.</p>
 
 <h3>Issues to note</h3>
 
-<p>I only ran into two Hickups along the way one being because I was using Rails 4.</p>
+<p>I only ran into two hickups along the way one being because I was using Rails 4.</p>
 
 <p><b>Paths break with Rails 4&hellip;sort of:</b><br/>
 If you are using Rails 4 you will first want to make sure you are on the Rails 4 branch of forem:</p>
@@ -180,10 +180,9 @@ If you are using Rails 4 you will first want to make sure you are on the Rails 4
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>When you run your application you might find that certain paths are not found when you go to your URL/forem/ . Based on the GitHub issues pages I have gathered that is has to to with the scope of forem and as it runs as a seperate rails engine it is unable to see the paths within the main app. To solve this you need to put &ldquo;main_path.&rdquo; in front of the paths.<br/>
-Example:</p>
+<p>When you run your application you might find that certain paths are not found when you go to you visit your forum at <a href="http://www.sitename.com/forum/">http://www.sitename.com/forum/</a> . Based on the GitHub issues pages I have gathered that is has to to with the scope of forem and as it runs as a seperate rails engine it is unable to see the paths within the main app. To solve this you need to put &ldquo;main_app.&rdquo; in front of the paths. I had to use this for all paths in navigation bar.<br/></p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Example</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sx">% link_to </span><span class="s2">&quot;Sign In&quot;</span><span class="p">,</span> <span class="n">main_app</span><span class="o">.</span><span class="n">user_login_path</span> <span class="o">%&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -191,7 +190,7 @@ Example:</p>
 <p><b>Themeing</b><br/>
 The other issue I ran into was with applying a theme. There are several gems already out there. I chose to use the <a href="https://github.com/radar/forem-theme-base">base</a> theme but there is one for <a href="https://github.com/radar/forem-bootstrap">Twitter Bootstrap</a> as well as an alternate theme called <a href="https://github.com/radar/forem-theme-twist">Twist</a>.</p>
 
-<p>You just need to add these to your gem file:</p>
+<p>You just need to add the theme gem to your Gemfile:</p>
 
 <figure class='code'><figcaption><span>APP_FOLDER/Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -204,7 +203,7 @@ The other issue I ran into was with applying a theme. There are several gems alr
 
 <p>You will additioanlly need to run the theme as a Rails engine. I wasn&rsquo;t to clear on what this meant but after digging into it it looks like all you need to do is set up an intializer by making a file called forem.rb under your lib folder:</p>
 
-<figure class='code'><figcaption><span>APP_FOLDER/Gemfile</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>APP_FOLDER/lib/forem.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -229,7 +228,7 @@ The other issue I ran into was with applying a theme. There are several gems alr
 
 <h3>Final Thoughts</h3>
 
-<p>Setting up a forum only took a couple of hours, mostly doing research, and then playing around with forem once I had it installed. Right now it is in beta form (I believe) but the development roadmap looks pretty exciting. I haven&rsquo;t spent a whole lot of time styling it but being able to to customize the views fairly easily will make this a pretty flexibile forum that will fit seemlessly in with the rest of the app. My only concern at this point is making sure that the forum does not overpower the main app in terms of bogging down performance by filling up the database.</p>
+<p>Setting up a forum only took a couple of hours, mostly doing research, and then playing around with forem once I had it installed. Right now it is in beta form (I believe) but the development roadmap looks pretty exciting. I haven&rsquo;t spent a whole lot of time styling it but being able to to customize the views fairly easily will make this a pretty flexibile forum that will fit seemlessly in with the rest of the app. My only concern at this point is making sure that the forum does not overpower the main app in terms of bogging down performance and filling up the database.</p>
 
 
 </article>
