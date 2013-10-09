@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Gem | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/gem/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-08T17:24:10-07:00</updated>
+  <updated>2013-10-08T17:25:14-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -23,6 +23,9 @@
 
 <p>So I recently wanted to tack on a forum to my application. The below post is my process in deciding on what forum software to choose and the considerations I made along the way, as well as what I ultimately ended up using.</p>
 
+<!-- more -->
+
+
 <p>I started by identifying two roads:<br/></p>
 
 <ol>
@@ -32,9 +35,6 @@
 
 
 <p>Well I am learning Ruby on Rails right now so building a forum system that adds little value to the overall value of the main application seems like a poor allocation of resrouces. So #2 seems like the right option, so what are my options?</p>
-
-<!-- more -->
-
 
 <h3>Existing Forum Software</h3>
 
