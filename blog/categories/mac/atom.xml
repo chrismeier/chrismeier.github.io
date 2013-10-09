@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Mac | Chris Meier's Blog]]></title>
+  <title><![CDATA[Category: mac | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-09T14:09:22-07:00</updated>
+  <updated>2013-10-09T14:13:43-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
