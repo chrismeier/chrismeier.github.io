@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-08T17:23:38-07:00</updated>
+  <updated>2013-10-08T17:24:10-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -79,7 +79,7 @@
 
 <p>I only ran into two Hickups along the way one being because I was using Rails 4.</p>
 
-<p><b>Paths break with Rails 4&hellip;sort of:</b>
+<p><b>Paths break with Rails 4&hellip;sort of:</b><br/>
 If you are using Rails 4 you will first want to make sure you are on the Rails 4 branch of forem:
 <code>ruby APP_FOLDER/Gemfile
 gem 'forem', :github =&gt; "radar/forem", :branch =&gt; "rails4"
