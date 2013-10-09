@@ -4,7 +4,7 @@
   <title><![CDATA[Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-09T01:26:30-07:00</updated>
+  <updated>2013-10-09T14:09:22-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -12,6 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[To-Do Lists + Calendars]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/10/09/to-do-lists-plus-calendars/"/>
+    <updated>2013-10-09T10:06:00-07:00</updated>
+    <id>http://ChrisMeier.github.io/blog/2013/10/09/to-do-lists-plus-calendars</id>
+    <content type="html"><![CDATA[<p>I am a huge fan of To-Do lists and have been an extreme user of them for the past 4 years. Over the years my methods have changed from a piece of printer paper and sharpie taped to my wall, to notecards, to post-it notes, to the iOS note apps, to reminders, to notebooks. The one thing I have always struggled with is the visualization of priority and time consumption for each task. I recently came across a fantastic article, <a href="http://blogs.hbr.org/2012/01/to-do-lists-dont-work/">To-Do Lists Don&rsquo;t Work</a>, in the Harvard Business Review and it has changed how I go about task organization.</p>
+
+<!-- more -->
+
+
+<h3>The Inherent Problems with To-Do Lists</h3>
+
+<p>Daniel Markovitz more or less argues that the reason why to-do lists alone are not good enough is because of the heterogenous nature of a list of items as well as our ability to choose what we want to do.</p>
+
+<p>His first point is that to-do lists are just a series of tasks that we need to complete. Because they do not have time consumption required associated with them usually, it makes it difficult to guage how much work you actually have on that list. Even if you were to write next to every item how long it would take it still would not do a very good job of telling you how much work you have and would detract from the point of having a simplified list of tasks. Additionally, we don&rsquo;t know what is most important on that list; there is not a due date, nor is there an understanding of any sort of sequential order that the tasks need to be completed.</p>
+
+<p>I had tried to solve this at one point by putting together a list in the order I wanted to do things but inevitabely I ran into two issues. The first being that I would need to add a task to the middle of the list which would ruin the clean look (minor case of OCD?) if I did not rewrite it. The other being that if one item took longer than expected, and an item a couple behind it had a due date that snuck up on you, it would require that you jump the list to take care of it before the others. What I learned from this is that it only works well for single-day to-do lists, and over a few days this solution loses effectivity.</p>
+
+<p>The next point Markovitz makes in his article is that we do not commit ourselves to completing tasks. By this he is saying that we pick whatever is easiest and most appealing on our to-do list. The poses the problem of us cheating our way through a positive feedback loop and trying to get the accomplished feeling when we check-off or cross out another item.</p>
+
+<p>To show where this fails I give you an example of to-do list with 10 items, 2 being long projects, the other 8 being smaller tasks. Becuase these are all represented equally on  the list we go for the 8 small items first as they are easy. If we can knock out 8 items in the time it takes to accomplish 1 of the bigger items it visually looks like we have accomplished more. We then become comfortable with doing 80% of the things that could have been done and move the remaining 20% to the next week. The next week we add another 10 items to the list with the same split, the result being that 4 large tasks and another 8 easy ones.</p>
+
+<p>At this point we may realize that we have a backlog of large tasks and one is due soon so we take care of one of them and the rest of the easy ones that week. Eventually this cycle yields a to-do list that consists of large tasks and the nature of the to-do list only furthers that. The problem here is that we are not committed to accomplishing any specific task.</p>
+
+<h3>So What Do We do?</h3>
+
+<p>The article suggests that the solution lies within using a calendar in tandem with a to-do list. To review, the problems with the to-do lists are:</p>
+
+<ol>
+<li>No sense of priority or due date associated with each task.</li>
+<li>No sense of time allocation required for each task.</li>
+<li>No commitment to completing a task</li>
+</ol>
+
+
+<p>Using the calendar suggests that you take your tasks and you place them on your calendar allocating time slots in advance for when you will work on the task. So how does it solve the problems with to-do lists?</p>
+
+<ol>
+<li>By allocating a slot on a timescale you immediately have prioritized that work relative to the other items on your list. When you put it on the list you are also taking into account the date it needs to be done by solving the issue of due dates not being taken into account.</li>
+<li>In putting the items on your calendar you are allocating a specific amount of time to a task. This allows you to visualize how large your to-do list is beyond a length of unchecked boxes.</li>
+<li>By putting it on the calendar you are getting around the &ldquo;I&rsquo;ll get to it when I finish xyx task,&rdquo; issue. One thing I&rsquo;ve also found is that by being able to visualize my workload I can see when I have time to work on larger projects without interuption by class or work and I try to be more productive during those times because of I can see the limited amount of those timeslots.</li>
+</ol>
+
+
+<h3>My Impressions so Far</h3>
+
+<p>Having used to-do lists over the past four years and being frustrated by scrapping them only to move incomplete tasks to a new one and just watching it build up, moving to a calendar and to-do list combination has been an amazing tranasition. Currently I write out everything I need to do on a to-do list. I am in between using a physical copy and and the native Reminders app on the iPhone but thinking about sticking to the paper because I like being able to physically cross something off. After the to-do list is complete I then add them to my calendar using different sub-calendars/colors for differnt types of work (personal, class, work). I use a fourth type called &ldquo;unassigned&rdquo; for putting items on the calendar onto a relatively empty day to signify that I have not found a time to work on them but to help visualize my workload.</p>
+
+<p>I am about a week into using this system and have found myself to be incredibly productive and much more focused when working on tasks because I know that there is a hard stop.</p>
+
+<p>Do you have a system that you like or reccomendations on how to optimize this one?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Forums in Rails]]></title>

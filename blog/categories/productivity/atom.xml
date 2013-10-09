@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Off-topic | Chris Meier's Blog]]></title>
-  <link href="http://ChrisMeier.github.io/blog/categories/off-topic/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Productivity | Chris Meier's Blog]]></title>
+  <link href="http://ChrisMeier.github.io/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
   <updated>2013-10-09T14:09:22-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
@@ -64,22 +64,6 @@
 <p>I am about a week into using this system and have found myself to be incredibly productive and much more focused when working on tasks because I know that there is a hard stop.</p>
 
 <p>Do you have a system that you like or reccomendations on how to optimize this one?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Non-Rails Posts]]></title>
-    <link href="http://ChrisMeier.github.io/blog/2013/09/20/non-rails-posts/"/>
-    <updated>2013-09-20T11:07:18-07:00</updated>
-    <id>http://ChrisMeier.github.io/blog/2013/09/20/non-rails-posts</id>
-    <content type="html"><![CDATA[<p>So I found myself wanting to post about things other than rails that sort of tie into software development but are not closely enough tied to rails that I would want to include them in the core of the site.</p>
-
-<!--more-->
-
-
-<p>I will be posting here about things ranging from interesting business trends to tools I use to random tie-bits I find on the internet that I want to talk more about.</p>
-
-<p>Edit: After moving to Octopress I&rsquo;ve decided to use the &lsquo;Off-topic&rsquo; tag instead of a seperate feed.</p>
 ]]></content>
   </entry>
   
