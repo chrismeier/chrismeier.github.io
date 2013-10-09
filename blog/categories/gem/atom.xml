@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Gem | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/gem/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-08T16:57:51-07:00</updated>
+  <updated>2013-10-08T17:23:38-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -93,7 +93,7 @@ Example:
 
 <p>```</p>
 
-<p><b>Themeing</b>
+<p><b>Themeing</b><br/>
 The other issue I ran into was with applying a theme. There are several gems already out there. I chose to use the <a href="https://github.com/radar/forem-theme-base">base</a> theme but there is one for <a href="https://github.com/radar/forem-bootstrap">Twitter Bootstrap</a> as well as an alternate theme called <a href="https://github.com/radar/forem-theme-twist">Twist</a>.</p>
 
 <p>You just need to add thesse to your gem file:
