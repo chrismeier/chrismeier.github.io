@@ -4,7 +4,7 @@
   <title><![CDATA[Category: productivity | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-28T20:49:16-07:00</updated>
+  <updated>2013-10-28T20:53:00-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -26,17 +26,15 @@
 <h3>Alternate 1: Mail Pilot</h3>
 
 <p>Until that is fixed (and I did look to see if there was something I could do) I have chosen to use another mail app. My first choice became the Kickstarter success <a href="http://www.mailpilot.co">Mail Pilot</a>. It is one of those email clients that focuses on turning your email into a to-do list and aims for inbox zero.
-<img src="/MailPilot.png" alt="Mail Pilot Image" />
+<img class="left" src="/images/BlogImages/MailPilot.png" title="&lsquo;Mail Pilot&rsquo;" >
 The mobile app looks great (at least from the app store pictures) but unfortunately the desktop version is currently in beta and is slow to roll out. So option 1 is on the back burner for now.</p>
 
-<h4>Alternate 2 Part 1: Air Mail</h4>
+<h3>Alternate 2 Part 1: Air Mail</h3>
 
-<p>The next client I came across is called Air Mail. It is a fairly simple looking client with a lot of customization as far as how you want it to look. It is has a clean feel to it but also has a weird color thing going on with the various folders in your mail box.
-<img src="/images/AirMailFolders.png" alt="AirMail Folders" />
-<img class="left" src="/images/BlogImages/AirMailFolders.png" title="&lsquo;Test&rsquo; &lsquo;Name&rsquo;" >
-The speed compared to apple mail is night and day, everything from pulling in mail to opening up a random folder it is incredibly quick. The inbox also has gesture support, two-finger swipe-right to archive and swipe-left trash the item. Bottom line is that Air Mail has a familiar feel compared to Apple Mail but is much quicker and doesn’t kill my battery.</p>
+<p>The next client I came across is called Air Mail. It is a fairly simple looking client with a lot of customization as far as how you want it to look.
+<img class="left" src="/images/BlogImages/AirMailFolders.png" title="&lsquo;Air Mail Folders&rsquo;" > It is has a clean feel to it but also has a weird color thing going on with the various folders in your mail box.  The speed compared to apple mail is night and day, everything from pulling in mail to opening up a random folder it is incredibly quick. The inbox also has gesture support, two-finger swipe-right to archive and swipe-left trash the item. Bottom line is that Air Mail has a familiar feel compared to Apple Mail but is much quicker and doesn’t kill my battery.</p>
 
-<h4>Alternte 2 Part 2: Mailbox App</h4>
+<h3>Alternte 2 Part 2: Mailbox App</h3>
 
 <p>Since Mail Pilot was my first choice I considered getting their mobile app but decided instead to wait for the desktop version before investing $14.99 in their ecosystem. A competitor to Mail Pilot, <a href="http://www.mailboxapp.com">Mailbox</a>, was also picking up a lot of attention and is very similar in functionality so I am currently giving that a shot as well. Mailbox also has a to-do list/inbox zero approach to email and as an added benefit you get an extra 1GB in Dropbox.</p>
 ]]></content>
