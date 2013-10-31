@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-30T23:49:50-07:00</updated>
+  <updated>2013-10-30T23:57:16-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -31,7 +31,7 @@
 Well as a mentioned previously my intentions are to practice Rails as this has been coded in Rails but additionally to document my progress. More importantly I see the blog as a platform to share my ideas about what I will be developing (read: trying to develop) and a way to discuss challenges that I have faced and offer insight into a rookies mind while trying to figure out this evidently &ldquo;beautiful&rdquo; language and framework that is Ruby on Rails.</p>
 
 <p>With that said, welcome to Chris on Rails and hear is what you can expect to see soon: <br>
-1. Updates to the blog as they come, at an extremely granular level<br>
+1. Updates to the blog as they come, at an extremely slow pace (design, functionality, etc)<br>
 2. My experience with coding and OO-principles <br>
 3. My process for learning rails so far <br></p>
 ]]></content>
