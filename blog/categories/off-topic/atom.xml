@@ -4,7 +4,7 @@
   <title><![CDATA[Category: off-topic | Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/blog/categories/off-topic/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-30T23:42:03-07:00</updated>
+  <updated>2013-10-30T23:43:53-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -19,7 +19,7 @@
     <updated>2013-10-30T23:25:00-07:00</updated>
     <id>http://ChrisMeier.github.io/blog/2013/10/30/setting-customer-application-icons-mac-os-x</id>
     <content type="html"><![CDATA[<p>Being a fan of the flat design iOS 7 design I wanted to try and make my computer feel a little more “flat”. My first step was to make my app icons on my Dock flat. Below is the end result and what follows is how you can do it.
-<img src="“/images/BlogImages/FlatDock.png“"></p>
+<img src="/images/BlogImages/FlatDock.png" title="&lsquo;Flat OS X Dock&rsquo;" ></p>
 
 <!-- more -->
 
@@ -27,18 +27,18 @@
 <h3>1. Find the image that you want to use</h3>
 
 <p>Obviously you can use any image you want but the easiest way to find one is to search google for icons and in this case “Safari flat icon”.
-<img src="“/images/BlogImages/GoogleSearch.png“"></p>
+<img src="/images/BlogImages/GoogleSearch.png" title="&lsquo;Google Search for Flat Icons&rsquo;" ></p>
 
 <h3>2. Get the right image</h3>
 
 <p>You want to make sure the image is actually an icon and not an image with a white background. When you click the image result you are able to tell if it the image has a transparent background by the fact that it has a checkered backdrop (see below). Once you have found the image that you want click view image (as highlighted below) and then right click and save the image you see in the new page.
-<img src="“/images/BlogImages/IdealIcon.png“"></p>
+<img src="/images/BlogImages/IdealIcon.png" title="&lsquo;How to tell if you have a usable icon image&rsquo;" ></p>
 
 <h3>3. Apply the icon</h3>
 
 <p>Go to the application that you want to apply the icon to. You can view your applications by opening up finder and clicking the Applications folder in the side menu. Once you have found the Application that you want to apply the icon to right-click it and select “Get Info”. Next, click the icon in the Get Info pane (see below). You should now see it highlighted in blue. Now, press <i>Command+V</i> to paste your icon over the old one.
 <i>Note: You will need to restart your computer OR restart Finder and Dock (Terminal commands “killall Dock” and “killall Finder”) in order for the icons to go into effect.</i>
-<img src="“/images/BlogImages/ChangeIcon.png“"></p>
+<img src="/images/BlogImages/ChangeIcon.png" title="&lsquo;Where to change the icon&rsquo;" ></p>
 ]]></content>
   </entry>
   
