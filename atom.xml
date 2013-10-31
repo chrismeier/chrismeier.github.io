@@ -4,7 +4,7 @@
   <title><![CDATA[Chris Meier's Blog]]></title>
   <link href="http://ChrisMeier.github.io/atom.xml" rel="self"/>
   <link href="http://ChrisMeier.github.io/"/>
-  <updated>2013-10-30T23:43:53-07:00</updated>
+  <updated>2013-10-30T23:45:22-07:00</updated>
   <id>http://ChrisMeier.github.io/</id>
   <author>
     <name><![CDATA[Chris Meier]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Setting Custom Application Icons Mac OS X]]></title>
-    <link href="http://ChrisMeier.github.io/blog/2013/10/30/setting-customer-application-icons-mac-os-x/"/>
+    <title type="html"><![CDATA[Changing Application Icons Mac OS X]]></title>
+    <link href="http://ChrisMeier.github.io/blog/2013/10/30/changing-application-icons-mac-os-x/"/>
     <updated>2013-10-30T23:25:00-07:00</updated>
-    <id>http://ChrisMeier.github.io/blog/2013/10/30/setting-customer-application-icons-mac-os-x</id>
+    <id>http://ChrisMeier.github.io/blog/2013/10/30/changing-application-icons-mac-os-x</id>
     <content type="html"><![CDATA[<p>Being a fan of the flat design iOS 7 design I wanted to try and make my computer feel a little more “flat”. My first step was to make my app icons on my Dock flat. Below is the end result and what follows is how you can do it.
 <img src="http://ChrisMeier.github.io/images/BlogImages/FlatDock.png" title="'Flat OS X Dock'" ></p>
 
@@ -36,8 +36,9 @@
 
 <h3>3. Apply the icon</h3>
 
-<p>Go to the application that you want to apply the icon to. You can view your applications by opening up finder and clicking the Applications folder in the side menu. Once you have found the Application that you want to apply the icon to right-click it and select “Get Info”. Next, click the icon in the Get Info pane (see below). You should now see it highlighted in blue. Now, press <i>Command+V</i> to paste your icon over the old one.
-<i>Note: You will need to restart your computer OR restart Finder and Dock (Terminal commands “killall Dock” and “killall Finder”) in order for the icons to go into effect.</i>
+<p>Go to the application that you want to apply the icon to. You can view your applications by opening up finder and clicking the Applications folder in the side menu. Once you have found the Application that you want to apply the icon to right-click it and select “Get Info”. Next, click the icon in the Get Info pane (see below). You should now see it highlighted in blue. Now, press <i>Command+V</i> to paste your icon over the old one.</p>
+
+<p><i>Note: You will need to restart your computer OR restart Finder and Dock (Terminal commands “killall Dock” and “killall Finder”) in order for the icons to go into effect.</i>
 <img src="http://ChrisMeier.github.io/images/BlogImages/ChangeIcon.png" title="'Where to change the icon'" ></p>
 ]]></content>
   </entry>
